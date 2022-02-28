@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   get("/", { :controller => "users", :action => "index" })
 
+  get("/user_sign_up", {:controller => "users", :action => "new_registration_form"})
+  get("/user_sign_out", {:controller => "users", :action => "toast_cookies"})
+  get("/user_sign_in", {:controller => "users", :action => "new_session"})
+  post("/verify_credentials", {:controller => "users", :action => "authenticate"})
   # User routes
 
   # CREATE
-  get("/insert_user_record", {:controller => "users", :action => "create" })
+  get("/insert_user", {:controller => "users", :action => "create" })
 
   # READ
   get("/users", {:controller => "users", :action => "index"})
